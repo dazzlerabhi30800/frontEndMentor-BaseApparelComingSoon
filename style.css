@@ -1,0 +1,321 @@
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap');
+
+
+:root {
+    /* ### Primary */
+
+    --Desaturated-Red: hsl(0, 36%, 70%);
+    --Soft-Red: hsl(0, 93%, 68%);
+
+    /* ### Neutral */
+
+    --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+    /* ### Gradients */
+
+    /* - Linear, 135deg, from hsl(0, 0%, 100%), to hsl(0, 100%, 98%) */
+    /* - Linear, 135deg, from hsl(0, 80%, 86%), to hsl(0, 74%, 74%) */
+
+    /* FONTS  */
+    --font-Josefin: 'Josefin Sans', sans-serif;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--font-Josefin);
+}
+
+body {
+    min-height: 100vh;
+    background: linear-gradient(135deg, hsl(0, 0%, 100%), hsl(0, 100%, 98%));
+}
+
+main {
+    margin: 1rem auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 1rem;
+}
+
+.logo {
+    margin: 10px;
+}
+
+.hero--img {
+    width: 100%;
+    height: clamp(320px, 30vh, 500px);
+    padding: 10px 0;
+}
+
+.hero--img img {
+    width: 100%;
+    object-fit: fill;
+    height: 100%;
+}
+
+.text--wrapper {
+    padding: .5rem 1rem 1rem 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
+}
+
+.text--wrapper .heading {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    font-weight: 300;
+    width: 300px;
+    letter-spacing: .8rem;
+    color: var(--Desaturated-Red);
+}
+
+.heading span {
+    font-weight: 600;
+    color: var(--Dark-Grayish-Red);
+}
+
+.text--wrapper>p {
+    width: 330px;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: var(--Desaturated-Red);
+}
+
+.form {
+    padding: 5px;
+    display: block;
+    position: relative;
+    width: 80%
+}
+
+
+
+.form input {
+    outline: none;
+    border: none;
+    border: 1px solid var(--Desaturated-Red);
+    padding: 13px 10px;
+    border-radius: 30px;
+    width: 90%;
+    display: inline;
+    background: transparent;
+    align-self: center;
+    margin: 0px 10px;
+    transition: all .3s linear;
+}
+
+.form.error input {
+    border: 2px solid var(--Soft-Red);
+}
+
+.form.form.success input {
+    border: 2px solid rgb(84, 243, 145);
+}
+
+.form input::placeholder {
+    color: var(--Desaturated-Red);
+}
+
+.form .error-img {
+    display: inline;
+    position: absolute;
+    top: 16px;
+    right: 80px;
+    width: 18px;
+    height: 18px;
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+.form.error {
+    opacity: 1;
+}
+
+.btn {
+    outline: none;
+    border: none;
+    display: inline;
+    position: absolute;
+    top: 5px;
+    padding: 10px 1.5rem;
+    border-radius: 30px;
+    background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+    transition: all .3s linear;
+    right: 10px;
+}
+
+small {
+    color: var(--Soft-Red);
+    display: block;
+    text-align: left;
+    margin: 10px 1.6rem;
+    opacity: 0;
+    transition: all .3s linear;
+}
+
+.form.error small {
+    opacity: 1;
+}
+
+.form.success small {
+    color: rgb(76, 243, 126);
+    opacity: 1;
+}
+
+
+
+@media(hover: hover) {
+    .btn {
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background: linear-gradient(135deg, hsl(0, 80%, 90%), hsl(0, 74%, 80%));
+    }
+}
+
+
+@media Screen and (min-width: 850px) {
+    .hero--img {
+        height: 500px;
+    }
+
+    .hero--img img {
+        object-fit: contain;
+    }
+}
+
+@media Screen and (min-width: 1200px) {
+    body {
+        padding: 0rem;
+        position: relative;
+        overflow: hidden;
+        width: 100%;
+    }
+
+    main {
+        grid-template-columns: 60% 40%;
+        margin: 0;
+    }
+
+    .logo {
+        margin: 3rem 1rem;
+        position: relative;
+        left: 300px;
+    }
+
+
+    .hero--img {
+        width: 100%;
+        height: 100vh;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .hero--img img {
+        object-fit: cover;
+    }
+
+
+    .text--wrapper {
+        transform: translate(200px, -870px);
+        position: relative;
+        padding: .5rem 0rem 1rem 7rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: initial;
+        align-items: flex-start;
+        text-align: left;
+        gap: 1rem;
+    }
+
+    .text--wrapper .heading {
+        font-size: 5.5rem;
+        text-transform: uppercase;
+        font-weight: 300;
+        width: 600px;
+        letter-spacing: 20px;
+        color: var(--Desaturated-Red);
+    }
+
+    .heading span {
+        font-weight: 600;
+        color: var(--Dark-Grayish-Red);
+    }
+
+    .text--wrapper>p {
+        width: 550px;
+        font-size: 1.3rem;
+        line-height: 1.6;
+        color: var(--Desaturated-Red);
+    }
+
+
+
+
+    .form {
+        padding: 0px 0;
+        display: block;
+        position: relative;
+        width: 60%;
+        margin: 10px 0;
+    }
+
+
+
+    .form input {
+        outline: none;
+        border: none;
+        border: 1px solid var(--Desaturated-Red);
+        padding: 13px 13px;
+        border-radius: 30px;
+        width: 70%;
+        max-width: 600px;
+        display: inline;
+        background: transparent;
+        align-self: center;
+        margin: 0px 0px;
+        font-size: 1.2rem;
+    }
+
+    .form .error-img {
+        display: inline;
+        position: absolute;
+        top: 16px;
+        right: 275px;
+        width: 18px;
+        height: 18px;
+        opacity: 0;
+        transition: all .3s linear;
+    }
+
+    .btn {
+        outline: none;
+        border: none;
+        display: inline;
+        position: absolute;
+        top: 0px;
+        padding: 14px 2rem;
+        border-radius: 30px;
+        background: linear-gradient(135deg, hsl(0, 80%, 86%), hsl(0, 74%, 74%));
+        transition: all .3s linear;
+        right: 180px;
+    }
+
+    small {
+        color: var(--Soft-Red);
+        display: block;
+        text-align: left;
+        margin: 10px 1.6rem;
+        opacity: 0;
+        transition: all .3s linear;
+    }
+}
